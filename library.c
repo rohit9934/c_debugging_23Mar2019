@@ -2,22 +2,22 @@
 struct node
 {
 	int value;
-	struct node * ptr;
+	struct node *ptr;
 };
-int enqueue(node * ptr1, node * ptr2){
-	/*enqueues ptr2 after ptr1*/
+void enqueue(node *ptr1, node *ptr2){
+	
 	printf("enqueue...\n");
 	ptr1->ptr = ptr2->ptr;
 }
-int show(struct node * ptra){
+void show(struct node *ptra){
 	/*shows a particular element of the queue*/
 	printf("\n%p\t", ptra);
-	printf("{%d\t", ptra->value);
-	printf("%p}\n", ptra->ptr);
+	printf("%d\t", ptra->value);
+	printf("%p\n", ptra->ptr);
 }
-int show_q(struct node * ptra){
+void show_q(struct node *ptra){
 	/*shows all the elements of the queue*/
-	while(ptra->ptr){
+	while((ptra->ptr)!=NULL){
 		show(ptra);
 		ptra=ptra->ptr;
 	}
